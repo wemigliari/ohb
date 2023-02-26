@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>O-HB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
+<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+<meta name="author" content="gettemplates.co" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!--
+  Bootstrap docs: https://getbootstrap.com/docs
+-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+
+<script>
+$(document).ready(function(){
+    var selectedProduct = getUrlParameter("product");
+    $('sel').val(selectedProduct);
+});
+
+function getUrlParameter(sParam){
+
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++)
+        {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sParam)
+            {
+                return sParameterName[1];
+            }
+        }
+
+
+}
+
+$(document).ready(function(){
+
+  //hides dropdown content
+  $(".size_chart").hide();
+
+  //unhides first option content
+  $("#monster").show();
+
+  //listen to dropdown for change
+  $("#size_select").change(function(){
+    //rehide content on change
+  $('.size_chart').hide();
+    //unhides current item
+  $('#'+$(this).val()).show();
+  });
+
+});
+</script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+<div  class="row">
+<div class="col-md-3">
+<div class="row">
+<div class="duration form-group">
+  <img src="images/o_hb_logo.jpeg"></img>
+  <label>Selecciona l'indicador</label>
+  <select class="form-control select option" id="size_select" NAME="sel" onChange="split(selected value)">
+		<option value="monster">Persones i llars</option>
+		<option value="jellyfish">Parc d'habitatges</option>
+		<option value="lollipop">Construcció i rehabilitació</option>
+		<option value="nightowl">El mercat d'habitatge</option>
+    <option value="eagle">Problemes d'accés i permanència</option>
+	</select>
+</div><!-- END .duration -->
+</div>
+
+
+<div class="row">
+  <div id="monster" class="size_chart">
+    <form>
+       <select class="form-control select option" id="size_select" NAME="options" ONCHANGE="document.getElementById('youriframe').src = this.options[this.selectedIndex].value">
+         <optgroup label="Persones i llars">
+           <option disabled selected value> Selecciona l'indicador </option>
+           <option value="https://datawrapper.dwcdn.net/ec1L0/25/">Taxa d'autocontenció residencial</option>
+           <option value="https://datawrapper.dwcdn.net/Bvbkx/3/">Llars que viuen de lloguer</option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Llars joves (16 a 34 anys) que viuen de lloguer</option>
+         </optgroup>
+       </select>
+     </form>
+  </div>
+</div>
+
+<div class="row">
+  <div id="jellyfish" class="size_chart">
+    <form>
+       <select class="form-control select option" id="size_select" NAME="options" ONCHANGE="document.getElementById('youriframe').src = this.options[this.selectedIndex].value">
+         <optgroup label="Parc d'habitatges">
+           <option disabled selected value>Selecciona l'indicador</option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Nombre d'habitatges</option>
+           <option value="https://datawrapper.dwcdn.net/Bvbkx/3/">Habitatges de persones jurídiques</option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Habitatges de persones físiques</option>
+           <option value="https://datawrapper.dwcdn.net/lZEur/6/">Habitatges d'administracions públiques</option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Habitatges de grans propietaris (15 habitatges)</option>
+           <option value="https://datawrapper.dwcdn.net/NjkuN/3/">Habitatges de grans propietaris (10 habitatges)</option>
+           <option value="https://datawrapper.dwcdn.net/NjkuN/3/">Habitatges de grans propietaris (10/15 habitatges)</option>
+         </optgroup>
+       </select>
+     </form>
+  </div>
+</div>
+
+<div class="row">
+  <div id="lollipop" class="size_chart">
+    <form>
+       <select class="form-control select option" id="size_select" NAME="options" ONCHANGE="document.getElementById('youriframe').src = this.options[this.selectedIndex].value">
+         <optgroup label="Construcció i rehabilitació">
+           <option disabled selected value> Selecciona l'indicador </option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Habitatges generats per canvi d'ús</option>
+           <option value="https://datawrapper.dwcdn.net/Bvbkx/3/">Habitatges generats per divisió</option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Habitatges generats per remunta</option>
+         </optgroup>
+       </select>
+     </form>
+  </div>
+</div>
+
+<div class="row">
+  <div id="nightowl" class="size_chart">
+    <form>
+       <select class="form-control select option" id="size_select" NAME="options" ONCHANGE="document.getElementById('youriframe').src = this.options[this.selectedIndex].value">
+         <optgroup label="El mercat d'habitatge">
+           <option disabled selected value> Selecciona l'indicador </option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Anuncis en oferta. Fotocasa (Base 100 = gener 2019)</option>
+           <option value="https://datawrapper.dwcdn.net/Bvbkx/3/">Anuncis en oferta. habitaclia (Base 100 = gener 2019)</option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Preu mitjà oferta lloguer - Fotocasa (mensual)</option>
+           <option value="https://datawrapper.dwcdn.net/lZEur/6/">Preu mitjà oferta lloguer - habitaclia (mensual)</option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Preu mitjà oferta lloguer - Fotocasa (m2)</option>
+           <option value="https://datawrapper.dwcdn.net/NjkuN/3/">Preu mitjà oferta lloguer - habitaclia (m2)</option>
+           <option value="https://datawrapper.dwcdn.net/NjkuN/3/">Preu mitjà de la demanda - Fotocasa</option>
+           <option value="https://datawrapper.dwcdn.net/NjkuN/3/">Preu mitjà de la demanda - habitaclia</option>
+           <option value="https://datawrapper.dwcdn.net/NjkuN/3/">Durada mitjana dels anuncis - Fotocasa</option>
+           <option value="https://datawrapper.dwcdn.net/NjkuN/3/">Durada mitjana dels anuncis - habitaclia</option>
+         </optgroup>
+       </select>
+     </form>
+  </div>
+</div>
+
+<div class="row">
+  <div id="eagle" class="size_chart">
+    <form>
+       <select class="form-control select option" id="size_select" NAME="options" ONCHANGE="document.getElementById('youriframe').src = this.options[this.selectedIndex].value">
+         <optgroup label="Problemes d'accés i permanència">
+           <option disabled selected value> Selecciona l'indicador </option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Esforç d'accés de lloguer (25.000 €/anuals)</option>
+           <option value="https://datawrapper.dwcdn.net/Bvbkx/3/">Esforç d'accés de lloguer (35.000 €/anuals)</option>
+           <option value="https://datawrapper.dwcdn.net/hTm5X/5/">Taxa de sobrecàrrega</option>
+           <option value="https://datawrapper.dwcdn.net/lZEur/6/">Taxa de sobrecàrrega (llars en lloguer)</option>
+         </optgroup>
+       </select>
+     </form>
+  </div>
+</div>
+
+</div>
+
+
+		<div class="col-md-9">
+      <iframe name="iframe" id="youriframe" src="https://datawrapper.dwcdn.net/ec1L0/8/" scrolling="no" frameBorder="0" style="padding: 1px 2px 1px 1px; background-color:gray;"></iframe>
+	  </div>
+
+</div>
+</div>
+
+<script>
+var select = document.forms[0].sel;
+select.onchange = function(){
+   var value =  select.options[select.selectedIndex].value; // to get Value
+   alert(value);
+}
+</script>
+
+</body>
+
+</html>
